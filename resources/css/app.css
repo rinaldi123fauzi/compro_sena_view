@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+/* Register Plus Jakarta Sans from public/build/font and set it as the default sans font */
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("/build/font/PlusJakartaSans-Thin.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("/build/font/PlusJakartaSans-ExtraLight.ttf") format("truetype");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("/build/font/PlusJakartaSans-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("/build/font/PlusJakartaSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("/build/font/PlusJakartaSans-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("/build/font/PlusJakartaSans-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("/build/font/PlusJakartaSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("/build/font/PlusJakartaSans-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Italic styles if available */
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("/build/font/PlusJakartaSans-ThinItalic.ttf") format("truetype");
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("/build/font/PlusJakartaSans-ExtraLightItalic.ttf")
+        format("truetype");
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("/build/font/PlusJakartaSans-LightItalic.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("/build/font/PlusJakartaSans-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("/build/font/PlusJakartaSans-MediumItalic.ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("/build/font/PlusJakartaSans-SemiBoldItalic.ttf")
+        format("truetype");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("/build/font/PlusJakartaSans-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("/build/font/PlusJakartaSans-ExtraBoldItalic.ttf")
+        format("truetype");
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+@theme {
+    --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system,
+        "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Prevent scroll anchoring so reloads start at top unless URL has a hash */
+html, body {
+    overflow-anchor: none;
+}
+
+/* Global smooth scrolling for anchor links */
+:root {
+    scroll-behavior: smooth;
+}
+
+/* Offset for fixed header when scrolling to anchors */
+* {
+    scroll-padding-top: 80px;
+}
+
+/* Apply globally */
+body {
+    font-family: var(--font-sans);
+}
