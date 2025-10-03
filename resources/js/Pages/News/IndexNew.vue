@@ -126,7 +126,7 @@
                                     t(featuredNews, 'title') ||
                                     featuredNews.title
                                 "
-                                class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+                                class="w-full object-cover group-hover:scale-105 transition-transform duration-300"
                             />
                             <div class="absolute inset-0 bg-black/40"></div>
                             <div
@@ -232,7 +232,7 @@
                             <img
                                 :src="newsItem.image_url"
                                 :alt="t(newsItem, 'title') || newsItem.title"
-                                class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                                class="w-full object-cover group-hover:scale-105 transition-transform duration-300"
                             />
                             <div class="absolute top-4 left-4">
                                 <span

@@ -121,7 +121,7 @@
                                 newsData.title ||
                                 newsItem.title
                             "
-                            class="w-full h-96 object-cover rounded-2xl shadow-xl"
+                            class="w-full object-cover rounded-2xl shadow-xl"
                         />
                     </div>
                     <!-- Article Content -->

@@ -18,7 +18,7 @@
 
     <!-- Disable browser scroll restoration on reload and force start at top -->
     <script>
-        (function () {
+        (function() {
             try {
                 if ('scrollRestoration' in history) {
                     history.scrollRestoration = 'manual';
@@ -31,7 +31,11 @@
                 // Temporarily disable smooth behavior
                 var prev = docEl.style.scrollBehavior;
                 docEl.style.scrollBehavior = 'auto';
-                window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: 'auto'
+                });
                 // Restore previous behavior
                 docEl.style.scrollBehavior = prev;
             }
@@ -40,14 +44,33 @@
             function snapLoop(frames) {
                 if (location.hash) return;
                 snapTop();
-                if (frames > 0) requestAnimationFrame(function () { snapLoop(frames - 1); });
+                if (frames > 0) requestAnimationFrame(function() {
+                    snapLoop(frames - 1);
+                });
             }
 
-            window.addEventListener('load', function () { snapLoop(8); }, { once: true });
-            window.addEventListener('pageshow', function (e) {
+            window.addEventListener('load', function() {
+                snapLoop(8);
+            }, {
+                once: true
+            });
+            window.addEventListener('pageshow', function(e) {
                 if (!location.hash && (e && e.persisted)) snapLoop(8);
             });
         })();
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X6JE07K5MZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-X6JE07K5MZ');
     </script>
 
     <!-- Scripts -->
