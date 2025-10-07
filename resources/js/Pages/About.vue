@@ -1417,7 +1417,7 @@
             @click="closeCommitmentModal"
         >
             <div
-                class="relative bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl commissioner-modal-content"
+                class="relative bg-white w-full max-w-4xl max-h-[100vh] sm:max-h-[90vh] overflow-y-auto shadow-2xl commissioner-modal-content rounded-none sm:rounded-2xl"
                 @click.stop
             >
                 <!-- Close Button -->
@@ -1440,24 +1440,26 @@
                     </svg>
                 </button>
                 <!-- Modal Content -->
-                <div class="p-8">
-                    <div class="space-y-6">
+                <div class="p-0 sm:p-8">
+                    <div class="space-y-4 sm:space-y-6">
                         <!-- Commitment Image -->
                         <div class="text-center">
                             <div
-                                class="w-auto mx-auto rounded-xl overflow-hidden shadow-xl"
+                                class="w-full mx-auto overflow-hidden sm:rounded-xl shadow-xl"
                             >
                                 <img
                                     :src="selectedCommitment.image_url"
                                     :alt="selectedCommitment.title"
-                                    class="max-w-none w-auto h-auto object-contain object-center"
+                                    class="w-full h-auto max-h-[85vh] object-contain object-center"
                                 />
                             </div>
                         </div>
 
                         <!-- Commitment Title Below Image -->
-                        <div class="text-center space-y-4">
-                            <h3 class="text-3xl font-bold text-[#31666f]">
+                        <div class="text-center px-4 sm:px-0">
+                            <h3
+                                class="text-2xl sm:text-3xl font-bold text-[#31666f] leading-snug"
+                            >
                                 {{ selectedCommitment.title }}
                             </h3>
                         </div>
@@ -1974,6 +1976,20 @@ const handleEscapeKey = (event) => {
 
 .commissioner-modal-content {
     animation: slideInModal 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Commitment modal specific responsive tweaks */
+@media (max-width: 640px) {
+    .commissioner-modal-content img {
+        width: 100% !important;
+        height: auto !important;
+    }
+    .commissioner-modal-content {
+        border-radius: 0 !important;
+    }
+    body:has(.commissioner-modal-content) {
+        overscroll-behavior: contain;
+    }
 }
 
 @keyframes slideInModal {
