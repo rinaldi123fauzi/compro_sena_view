@@ -14,19 +14,21 @@
                         v-if="footerData?.image_footer_url"
                         :src="footerData.image_footer_url"
                         alt="PT Sena Workers"
-                        class="rounded-lg shadow-lg"
+                        class="rounded-lg shadow-lg w-full max-w-sm lg:max-w-full"
                     />
                 </div>
                 <!-- Column 2: Company Information -->
                 <div
-                    class="py-8 px-6 lg:px-12 flex flex-col justify-center mt-[30px] mb-[30px]"
+                    class="py-8 px-6 lg:px-12 flex flex-col justify-center mt-[30px] mb-[30px] text-center lg:text-left"
                     style="background-color: #f9f9f9"
                 >
                     <!-- Company Logo and Name -->
-                    <div class="flex items-center space-x-4 mb-6">
+                    <div
+                        class="flex flex-col lg:flex-row lg:items-center lg:space-x-4 mb-6 items-center"
+                    >
                         <div>
                             <h3
-                                class="text-xl font-bold text-gray-900 text-[1.75rem]"
+                                class="text-xl lg:text-[1.75rem] font-bold text-gray-900"
                             >
                                 {{
                                     footerData?.nama_pt ||
@@ -40,17 +42,19 @@
                     </div>
                     <!-- Company Address -->
                     <div class="mb-6">
-                        <div class="flex items-start space-x-3">
+                        <div
+                            class="flex flex-col lg:flex-row lg:items-start items-center lg:space-x-3"
+                        >
                             <!-- Location Icon with fallback -->
                             <div
-                                class="text-lg mt-1 flex-shrink-0"
+                                class="text-lg mt-1 flex-shrink-0 mb-2 lg:mb-0"
                                 style="color: #31666f"
                             >
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
                                 <div
-                                    class="text-gray-800 font-medium text-gray-600"
+                                    class="text-gray-800 font-medium text-gray-600 text-sm lg:text-base"
                                     v-html="
                                         footerData?.alamat_pt ||
                                         'Komplek Perusahaan Gas Negara (PGN) Daan Mogot Gang Macan Rt.3 Rw.5, Duri Kepa, Kebon Jeruk, Kota Jakarta Barat 11510'
@@ -69,7 +73,9 @@
                     <!-- Member and Subsidiary Information -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Member Of -->
-                        <div>
+                        <div
+                            class="flex flex-col items-center md:items-start lg:items-start"
+                        >
                             <p class="text-gray-600 text-sm mb-3">Member Of</p>
                             <div class="">
                                 <img
@@ -83,7 +89,9 @@
                         </div>
 
                         <!-- Subsidiary Of -->
-                        <div>
+                        <div
+                            class="flex flex-col items-center md:items-start lg:items-start"
+                        >
                             <p class="text-gray-600 text-sm mb-3">
                                 Subsidiary Of
                             </p>
@@ -113,13 +121,16 @@
                 "
             >
                 <div
-                    class="px-4 sm:px-6 lg:px-8 py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 t-[30px] mb-[30px]"
+                    class="px-4 sm:px-6 lg:px-8 py-12 max-w-7xl mx-auto t-[30px] mb-[30px]"
                 >
+                    <!-- Mobile: Center layout, Desktop: 4 columns -->
                     <div
-                        class="grid grid-cols-1 md:grid-cols-4 gap-8 items-start"
+                        class="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-8 lg:items-start"
                     >
                         <!-- Column 1: Logo and Company Name -->
-                        <div class="flex items-center space-x-4">
+                        <div
+                            class="flex lg:flex justify-center lg:justify-start items-center space-x-4 mb-6 lg:mb-0"
+                        >
                             <img
                                 v-if="footerData?.logo_footer_url"
                                 :src="footerData.logo_footer_url"
@@ -129,38 +140,42 @@
                         </div>
 
                         <!-- Column 2: Navigation Section 1 -->
-                        <div class="flex flex-col space-y-3">
+                        <div
+                            class="flex flex-col space-y-3 text-center lg:text-left"
+                        >
                             <a
                                 :href="route('about.index')"
-                                class="text-white hover:text-gray-200 transition-colors duration-200 text-sm font-medium"
+                                class="text-white hover:text-gray-200 transition-colors duration-200 text-sm lg:text-sm font-medium"
                             >
                                 TENTANG KAMI
                             </a>
                             <a
                                 :href="route('capability.index')"
-                                class="text-white hover:text-gray-200 transition-colors duration-200 text-sm font-medium"
+                                class="text-white hover:text-gray-200 transition-colors duration-200 text-sm lg:text-sm font-medium"
                             >
                                 KAPABILITAS
                             </a>
                             <a
                                 :href="route('projects.map')"
-                                class="text-white hover:text-gray-200 transition-colors duration-200 text-sm font-medium"
+                                class="text-white hover:text-gray-200 transition-colors duration-200 text-sm lg:text-sm font-medium"
                             >
                                 PORTOFOLIO
                             </a>
                         </div>
 
                         <!-- Column 3: Navigation Section 2 -->
-                        <div class="flex flex-col space-y-3">
+                        <div
+                            class="flex flex-col space-y-3 text-center lg:text-left"
+                        >
                             <a
                                 :href="route('contact.index')"
-                                class="text-white hover:text-gray-200 transition-colors duration-200 text-sm font-medium"
+                                class="text-white hover:text-gray-200 transition-colors duration-200 text-sm lg:text-sm font-medium"
                             >
                                 HUBUNGI KAMI
                             </a>
                             <a
                                 :href="route('news.index')"
-                                class="text-white hover:text-gray-200 transition-colors duration-200 text-sm font-medium"
+                                class="text-white hover:text-gray-200 transition-colors duration-200 text-sm lg:text-sm font-medium"
                             >
                                 MEDIA & INVESTOR
                             </a>
@@ -173,19 +188,23 @@
                         </div>
 
                         <!-- Column 4: Social Media -->
-                        <div>
-                            <h4 class="text-white font-medium mb-3 text-sm">
+                        <div class="text-center lg:text-left">
+                            <h4
+                                class="text-white font-medium mb-4 text-sm lg:mb-3"
+                            >
                                 SOCIAL MEDIA
                             </h4>
-                            <div class="flex space-x-4">
+                            <div
+                                class="flex justify-center lg:justify-start space-x-5 lg:space-x-4"
+                            >
                                 <!-- Instagram -->
                                 <a
                                     v-if="footerData?.instagram_link"
                                     :href="footerData.instagram_link"
-                                    class="flex items-center justify-center"
+                                    class="flex items-center justify-center hover:opacity-80 transition-opacity"
                                 >
                                     <i
-                                        class="fab fa-instagram text-white text-lg"
+                                        class="fab fa-instagram text-white text-xl lg:text-lg"
                                     ></i>
                                 </a>
 
@@ -193,10 +212,10 @@
                                 <a
                                     v-if="footerData?.youtube_link"
                                     :href="footerData.youtube_link"
-                                    class="flex items-center justify-center"
+                                    class="flex items-center justify-center hover:opacity-80 transition-opacity"
                                 >
                                     <i
-                                        class="fab fa-youtube text-white text-lg"
+                                        class="fab fa-youtube text-white text-xl lg:text-lg"
                                     ></i>
                                 </a>
 
@@ -204,10 +223,10 @@
                                 <a
                                     v-if="footerData?.linkedin_link"
                                     :href="footerData.linkedin_link"
-                                    class="flex items-center justify-center"
+                                    class="flex items-center justify-center hover:opacity-80 transition-opacity"
                                 >
                                     <i
-                                        class="fab fa-linkedin-in text-white text-lg"
+                                        class="fab fa-linkedin-in text-white text-xl lg:text-lg"
                                     ></i>
                                 </a>
                             </div>
