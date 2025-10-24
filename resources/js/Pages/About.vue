@@ -419,7 +419,7 @@
                         }"
                     >
                         <i
-                            class="fa fa-handshake-o text-sm transition-colors duration-300"
+                            class="fa fa-handshake text-sm transition-colors duration-300"
                             :class="
                                 activeSection === 'commitments-policies'
                                     ? 'text-white'
@@ -428,7 +428,7 @@
                         ></i>
                     </a>
 
-                    <a
+                    <!-- <a
                         href="#organizational-structure"
                         @click="
                             handleAnchorClick(
@@ -450,7 +450,7 @@
                                     : 'text-gray-600 group-hover:text-white'
                             "
                         ></i>
-                    </a>
+                    </a> -->
                 </nav>
             </div>
         </div>
